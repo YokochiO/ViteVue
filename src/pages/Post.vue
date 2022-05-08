@@ -23,8 +23,6 @@ const json = await fetcher(query)
 if (json.data.postBy === null) {
     error.value = true
 }
-
-console.log(`fetching page ${route.params.id}`)
 </script>
 
 <template>

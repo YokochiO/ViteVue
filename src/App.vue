@@ -20,6 +20,6 @@ import MainNav from './components/MainNav.vue'
         </template>
     </router-view>
     <footer>
-        <p><a href="https://github.com/YokochiO">リポジトリ</a></p>
+        <p><a href="https://github.com/YokochiO/ViteVue">リポジトリ</a></p>
     </footer>
 </template>
