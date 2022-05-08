@@ -1,5 +1,5 @@
 export default async function fetcher(query) {
-    const url = 'http://api.rorret.info/app/graphql'
+    const url = 'https://api.rorret.info/app/graphql'
 
     const options = {
         method: 'POST',
