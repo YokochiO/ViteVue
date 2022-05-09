@@ -1,25 +1,21 @@
 <script setup>
-import MainNav from './components/MainNav.vue'
+import Header from './components/Header.vue'
+import Footer from './components/Footer.vue'
 </script>
 
 <template>
-    <header>
-        <main-nav />
-        <h1>Vite + Vue + Wordpress</h1>
-    </header>
-    <router-view v-slot="{ Component }">
+    <Header />
+    <Router-view v-slot="{ Component }">
         <template v-if="Component">
-            <transition mode="out-in">
+            <Transition mode="out-in">
                 <main>
-                    <suspense>
+                    <Suspense>
                         <component :is="Component"></component>
                         <template #fallback> Loading... </template>
-                    </suspense>
+                    </Suspense>
                 </main>
-            </transition>
+            </Transition>
         </template>
-    </router-view>
-    <footer>
-        <p><a href="https://github.com/YokochiO/ViteVue">リポジトリ</a></p>
-    </footer>
+    </Router-view>
+    <Footer />
 </template>

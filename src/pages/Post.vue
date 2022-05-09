@@ -5,19 +5,7 @@ import fetcher from '../lib/fetcher'
 
 const error = ref(false)
 const route = useRoute()
-const query = `{
-  postBy(postId: ${route.params.id}) {
-    id
-    postId
-    title
-    content
-    featuredImage {
-      node {
-        mediaItemUrl
-      }
-    }
-  }
-}`
+const query = `{postBy(postId:${route.params.id}){id postId title content featuredImage{node{mediaItemUrl}}}}`
 const json = await fetcher(query)
 // 存在しない記事だとpostByがnullになる
 if (json.data.postBy === null) {

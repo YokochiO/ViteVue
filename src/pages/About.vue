@@ -1,15 +1,10 @@
 <script setup>
 import fetcher from '../lib/fetcher'
 
-const query = `{
-  pageBy(pageId: 2) {
-    id
-    title
-    content
-  }
-}`
-
-const json = await fetcher(query)
+const props = defineProps({
+    query: String,
+})
+const json = await fetcher(props.query)
 </script>
 
 <template>

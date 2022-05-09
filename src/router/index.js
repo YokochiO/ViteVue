@@ -1,8 +1,6 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 import NotFound from '../pages/NotFound.vue'
 import Home from '../pages/Home.vue'
-import About from '../pages/About.vue'
-import Post from '../pages/Post.vue'
 
 const routes = [
     {
@@ -18,12 +16,15 @@ const routes = [
     {
         path: '/about',
         name: 'about',
-        component: About,
+        props: {
+            query: '{pageBy(pageId:2){id title content}}',
+        },
+        component: () => import('../pages/About.vue'),
     },
     {
         path: '/post/:id',
         name: 'post',
-        component: Post,
+        component: () => import('../pages/Post.vue'),
     },
 ]
 

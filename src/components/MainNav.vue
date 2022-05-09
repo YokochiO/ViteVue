@@ -1,5 +1,3 @@
-<script setup></script>
-
 <template>
     <nav class="main-nav">
         <ul>
