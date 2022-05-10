@@ -1,8 +1,8 @@
 <template>
     <nav class="main-nav">
         <ul>
-            <li><router-link to="/">Home</router-link></li>
-            <li><router-link to="/about">About</router-link></li>
+            <li><Router-link :to="{ name: 'Home' }">Home</Router-link></li>
+            <li><Router-link :to="{ name: 'About' }">About</Router-link></li>
         </ul>
     </nav>
 </template>

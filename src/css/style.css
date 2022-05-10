@@ -42,19 +42,22 @@ body {
   background: var(--bg);
   font-size: 1.15rem;
   line-height: 1.5;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr min(45rem, 90%) 1fr;
-      grid-template-columns: 1fr min(45rem, 90%) 1fr;
   margin: 0;
 }
 
 body > * {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr min(45rem, 90%) 1fr;
+      grid-template-columns: 1fr min(45rem, 90%) 1fr;
+}
+
+body > * > * {
   -ms-grid-column: 2;
   grid-column: 2;
 }
 
-body > header {
+body > * > header {
   background: var(--accent-bg);
   border-bottom: 1px solid var(--border);
   text-align: center;
@@ -64,12 +67,12 @@ body > header {
           box-sizing: border-box;
 }
 
-body > header h1 {
+body > * > header h1 {
   max-width: 1200px;
   margin: 1rem auto;
 }
 
-body > header p {
+body > * > header p {
   max-width: 40rem;
   margin: 1rem auto;
 }
@@ -78,7 +81,7 @@ main {
   padding-top: 1.5rem;
 }
 
-body > footer {
+body > * > footer {
   margin-top: 4rem;
   padding: 2rem 1rem 1.5rem 1rem;
   color: var(--text-light);
@@ -243,7 +246,8 @@ header > nav a:visited {
   text-decoration: none;
 }
 
-header > nav a:hover {
+header > nav a:hover,
+header > nav a.router-link-active {
   color: var(--accent);
   border-color: var(--accent);
 }
@@ -462,6 +466,11 @@ main video {
   max-width: 100%;
   height: auto;
   border-radius: 5px;
+}
+
+main p,
+main li {
+  line-height: 1.75;
 }
 
 figure {

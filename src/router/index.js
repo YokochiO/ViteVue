@@ -10,12 +10,12 @@ const routes = [
     },
     {
         path: '/',
-        name: 'home',
+        name: 'Home',
         component: Home,
     },
     {
         path: '/about',
-        name: 'about',
+        name: 'About',
         props: {
             query: '{pageBy(pageId:2){id title content}}',
         },
@@ -23,7 +23,7 @@ const routes = [
     },
     {
         path: '/post/:id',
-        name: 'post',
+        name: 'Post',
         component: () => import('../pages/Post.vue'),
     },
 ]
