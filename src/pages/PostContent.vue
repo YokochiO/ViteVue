@@ -8,7 +8,7 @@ const props = defineProps({
 
 <template>
     <h2>{{ props.title }}</h2>
-    <figure class="eyecatch" v-if="image">
+    <figure class="eyecatch" v-if="props.image">
         <img :src="props.image.node.mediaItemUrl" alt="" />
     </figure>
     <div class="content-body" v-html="props.content"></div>
