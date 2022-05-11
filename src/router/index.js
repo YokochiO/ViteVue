@@ -1,6 +1,5 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 import NotFound from '../pages/NotFound.vue'
-import Home from '../pages/Home.vue'
 
 const routes = [
     {
@@ -11,14 +10,11 @@ const routes = [
     {
         path: '/',
         name: 'Home',
-        component: Home,
+        component: () => import('../pages/Home.vue'),
     },
     {
         path: '/about',
         name: 'About',
-        props: {
-            query: '{pageBy(pageId:2){id title content}}',
-        },
         component: () => import('../pages/About.vue'),
     },
     {

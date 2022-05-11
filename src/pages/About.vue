@@ -1,15 +1,15 @@
 <script setup>
 import fetcher from '../lib/fetcher'
+import PostContent from './PostContent.vue'
 
-const props = defineProps({
-    query: String,
-})
-const json = await fetcher(props.query)
+const query = '{pageBy(pageId:2){featuredImage{node{mediaItemUrl}}content,title,pageId}}'
+const json = await fetcher(query)
 </script>
 
 <template>
-    <h2>{{ json.data.pageBy.title }}</h2>
-    <div class="post">
-        <div class="content-body" v-html="json.data.pageBy.content"></div>
-    </div>
+    <PostContent
+        :title="json.data.pageBy.title"
+        :image="json.data.pageBy.featuredImage"
+        :content="json.data.pageBy.content"
+    />
 </template>

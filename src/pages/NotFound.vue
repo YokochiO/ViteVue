@@ -1,3 +1,4 @@
 <template>
-    <h2>Not Found</h2>
+    <h2>えらーかな？</h2>
+    <p>記事を読み込めなかったみたいです。</p>
 </template>
